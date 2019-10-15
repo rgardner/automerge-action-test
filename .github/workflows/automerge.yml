@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: automerge
-        uses: "rgardner/automerge-action@1105422cf170d912ca4920dbbf27dc1568fb9e8b"
+        uses: "rgardner/automerge-action@2b2fa76f0851b73b28ed7ca3a19cc323fc9cacc0"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           LABELS: "!wip"
