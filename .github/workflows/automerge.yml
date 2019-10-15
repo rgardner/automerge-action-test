@@ -1,0 +1,29 @@
+name: automerge
+on:
+  pull_request:
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  status: {}
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: automerge
+        uses: "rgardner/automerge-action@75d3ac77ec7168008412143dc90b63e7b373588"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          LABELS: "!wip"
+          AUTOMERGE: "ready-to-squash-and-merge"
+          AUTOREBASE: "ready-to-rebase-and-merge"
+          MERGE_METHOD: "squash"
+          COMMIT_MESSAGE: "pull-request-title-and-description"
