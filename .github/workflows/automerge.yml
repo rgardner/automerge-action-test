@@ -25,5 +25,4 @@ jobs:
           LABELS: "!wip"
           AUTOMERGE: "ready-to-squash-and-merge"
           AUTOREBASE: "ready-to-rebase-and-merge"
-          MERGE_METHOD: "squash"
           COMMIT_MESSAGE: "pull-request-title-and-description"
